@@ -15,7 +15,7 @@ class House:
 		self.health = Health
 		self.IsOwned = IsOwned
 		self.sell_price = self.price * 100 / 40
-	
+
 
 	def list_self(self):
 		print(self.name)
@@ -51,21 +51,21 @@ def inv():
 	print("		Owned Houses:\n")
 	counter = 0
 
-  for i in owned_houses:
+	for i in owned_houses:
 		counter += 1
 		print(f"[{counter}]")
 
-  i.list_self()
+		i.list_self()
 	user_input = input("")
 	user_input = int(user_input) - 1
 	try:
 		house = owned_houses[user_input]
-		
+
 	except:
 
-    print("Do not own house")
+		print("Do not own house")
 
-  user_input = input("[1] fix house [2] sell house ")
+	user_input = input("[1] fix house [2] sell house ")
 
 def house_menu():
 	global Houses
@@ -78,15 +78,15 @@ def house_menu():
 		i.list_self()
 		print("\n")
 	user_input = input("")
-  
-  user_input = int(user_input) - 1
-  
-  if user_input > -1 and user_input < 3:
-	
-  starter_home = starter_Houses[user_input]
+
+	user_input = int(user_input) - 1
+
+	if user_input > -1 and user_input < 3:
+
+		starter_home = starter_Houses[user_input]
 		owned_houses.append(starter_home)
 		pla.balance -= starter_home.price
-	
+
 	else:
 		print("Pick a actual number!")
-	inv()
+		inv()
